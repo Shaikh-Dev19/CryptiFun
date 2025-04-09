@@ -49,21 +49,22 @@ public class cryptiFun {
         return decoded.toString();
     }
 
+
     public static void main(String[] Args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a Message to Encode");
         String myText = sc.nextLine();
-        
+
         String  encoded = encode(myText);
         System.out.println("Encoded Message");
         System.out.println(encoded);
 
         System.out.println("Enter a Message to Decode");
         String myDecode = sc.nextLine();
-        
+
         String decoded = decode(myDecode);
         System.out.println("Decoded Message");
         System.out.println(decoded);
     }
-
+    
 }
