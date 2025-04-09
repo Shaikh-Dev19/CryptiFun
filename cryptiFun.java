@@ -2,15 +2,21 @@ import java.util.Scanner;
 
 public class cryptiFun {
 
-    public static String encode(String text) {
+    public static String encode(String text){
         StringBuilder encoded = new StringBuilder();
-        for (char c : text.toUpperCase().toCharArray()) {
-            if (c == ' ') {
+        for(char c : text.toCharArray()) {
+            if(c == ' ') {
                 encoded.append('_');
-            } else if (c >= 'A' && c <= 'Z') {
-                int code = c - 'A' + 1;
+            }
+            else if (c >= 'a' && c <= 'z') {
+                int code = c - 'a' + 1;
                 encoded.append(String.format("%02d", code));
-            } else {
+            }
+            else if (c >= 'A' && c <= 'Z') {
+                int code = c - 'A' + 27;
+                encoded.append(String.format("%02d", code));
+            }
+            else {
                 encoded.append(c);
             }
         }
