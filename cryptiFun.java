@@ -33,10 +33,16 @@ public class cryptiFun {
                 i++;
             } else if (i + 1 < text.length() && Character.isDigit(c) && Character.isDigit(text.charAt(i + 1))) {
                 int code = Integer.parseInt(text.substring(i, i + 2));
-                decoded.append((char) (code + 64));
+                if (code >= 1 && code <= 26) {
+                    decoded.append((char) ('a' + code - 1)); // 1 → 'a', 2 → 'b', ..., 26 → 'z'
+                } else if (code >= 27 && code <= 52) {
+                    decoded.append((char) ('A' + code - 27)); // 27 → 'A', 28 → 'B', ..., 52 → 'Z'
+                } else {
+                    decoded.append('?'); // fallback for unexpected codes
+                }
                 i += 2;
             } else {
-                decoded.append(c);
+                decoded.append(c); // for symbols or non-digit characters
                 i++;
             }
         }
