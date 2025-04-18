@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Cipher Fun",
+    "version": "1.0",
+    "description": "Encrypt and decrypt messages using classic ciphers!",
+    "action": {
+      "default_popup": "popup/popup.html"
+    },
+    "permissions": ["clipboardWrite"]
+}
+  

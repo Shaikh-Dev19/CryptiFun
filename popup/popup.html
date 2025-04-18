@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cipher Fun</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Cipher Fun</h2>
+    
+    <div class="input-group">
+      <label for="cipher-select">Select Cipher:</label>
+      <select id="cipher-select">
+        <option value="atbash">Atbash</option>
+        <option value="caesar">Caesar</option>
+        <option value="emoji">Emoji</option>
+        <option value="numeric">Numeric</option>
+      </select>
+      <div class="cipher-description" id="cipher-description">
+        Atbash: Replaces each letter with its reverse in the alphabet
+      </div>
+    </div>
+
+    <div id="caesar-shift-container" class="input-group" style="display: none;">
+      <label for="caesar-shift">Shift Value:</label>
+      <input type="number" id="caesar-shift" min="1" max="25" value="3">
+      <div class="cipher-description">
+        Caesar: Shifts each letter by a fixed number down the alphabet
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="input-text">Input Text:</label>
+      <textarea id="input-text" placeholder="Enter text to encode/decode..."></textarea>
+    </div>
+    
+    <div class="buttons">
+      <button id="encode-btn">Encode</button>
+      <button id="decode-btn">Decode</button>
+      <button id="clear-btn" class="clear-btn">Clear</button>
+    </div>
+
+    <div class="input-group">
+      <div class="result-header">
+        <label for="output-text">Result:</label>
+        <button id="copy-btn" class="copy-btn" title="Copy to clipboard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+      <textarea id="output-text" readonly placeholder="Result will appear here..."></textarea>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
